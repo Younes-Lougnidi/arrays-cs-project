@@ -141,6 +141,13 @@ public class ManageStudent {
         return school;
 
     }
+    public static void topStudentOfEachClass(Student[][] school){
+        if(school == null){return;}
+        for(int i = 0 ; i < school.length ; i ++ ){
+            sortByGradeDesc(school[i]);
+            System.out.println("The top student of class "+ (i+1) + " is : " + school[i][0]);
+        }
+    }
 
     // 1) Create an Array of Students + demos for all tasks
     public static void main(String[] args) {
@@ -210,6 +217,7 @@ public class ManageStudent {
         // 11) School matrix
         System.out.println();
         Student[][] school = school_matrix(updatedArray, 2,3);
+        topStudentOfEachClass(school);
 
     }
 }
